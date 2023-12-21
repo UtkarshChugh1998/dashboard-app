@@ -17,6 +17,10 @@
   text-align: center;
 }
 
+/* Content CSS */
+.content {
+  background-color: #f3f3f3;
+}
 .icon {
   padding: 2px 0;
   
@@ -25,13 +29,57 @@
 .icon:hover {
   cursor: pointer;
 }
+
+/* Navbar CSS */
 .navbar {
-  flex: 0.3;
+  flex: 0.2;
   margin: 0 5px;
+  overflow: auto;
+}
+.navbarDrawer {
+  position: relative;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.heading {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  color: gray;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 2px;
+  border-radius: 2px;
+}
+.heading:hover {
+  background-color: #f3f3f3;
+}
+.heading.selected {
+  background-color: #d3d3d3;
+}
+.navContent {
+  padding: 0 5px;
 }
 
+.iconItem {
+  flex: 0.2
+}
+.headingItem {
+  flex: 1
+}
+.options {
+  max-height: 0;
+  color: gray;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+.options.active {
+  max-height: 200px;
+}
 .content {
-  flex: 0.6;
+  flex: 0.7;
 }
 .sidebarContainer {
   display: flex;
@@ -41,4 +89,31 @@
   justify-content: space-between;
   overflow: auto;
   color: white;
+}
+
+
+/* Organization CSS */
+.organizationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.orgHeading {
+  color: gray;
+  font-weight: 600;
+}
+.orgName {
+  font-weight: 500;
+}
+.image {
+  height: 30px;
+  width: 30px;
+}
+
+/* Services CSS */
+.servicesContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
 }

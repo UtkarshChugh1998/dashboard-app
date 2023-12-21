@@ -1,9 +1,106 @@
-export const navBarOptions = (sideBarValue: string) => {
+import { ReactElement } from 'react'
+
+export const navBarOptions = (sideBarValue: string): NavBarOption[] => {
   return navList[sideBarValue] || navList.home
 }
+export type NavBarOption = {
+  icon?: string
+  heading: string
+  options: NavBarOption[]
+  content?: string
+}
 
-const navList: any = {
-  home: ['Option 1', 'Option 2', 'Option 3'],
-  global: ['Option 1', 'Option 2', ' Option 3'],
-  currency: ['Chain', 'Environment', ' Production']
+export type ParentHierarchy = {
+  heading: string
+  parent: ParentHierarchy | null
+}
+type NavBarList = Record<string, NavBarOption[]>
+const getOptions = (headingValue: string) => {
+  return [
+    {
+      heading: `${headingValue} Option 1`,
+      options: [],
+      icon: 'default',
+      content: 'basic'
+    },
+    {
+      heading: `${headingValue} Option 2`,
+      options: [],
+      icon: 'default',
+      content: 'basic'
+    },
+    {
+      heading: `${headingValue} Option 3`,
+      options: [],
+      icon: 'default',
+      content: 'basic'
+    }
+  ]
+}
+
+const navList: NavBarList = {
+  home: [
+    {
+      heading: 'Heading 1',
+      options: getOptions('Home Heading 1')
+    },
+    {
+      heading: 'Heading 2',
+      options: getOptions('Home Heading 2')
+    },
+    {
+      heading: 'Heading 3',
+      options: getOptions('Home Heading 3')
+    }
+  ],
+  global: [
+    { heading: 'Global Heading 1', options: getOptions('GH 1') },
+    { heading: 'Global Heading 2', options: getOptions('GH 2') },
+    { heading: 'Global Heading 3', options: getOptions('GH 3') }
+  ],
+  currency: [
+    { heading: 'Chain', options: getOptions('chain') },
+    { heading: 'Environment', options: getOptions('Environment') },
+    { heading: 'Environment 2', options: getOptions('Environment') },
+    { heading: 'Environment 3', options: getOptions('Environment') },
+    {
+      heading: 'Production',
+      options: [
+        {
+          heading: 'Dashboard',
+          options: [],
+          icon: 'dashboard',
+          content: 'dashboard'
+        },
+        {
+          heading: 'Settings',
+          options: [],
+          icon: 'settings',
+          content: 'settings'
+        },
+        {
+          heading: 'API Integration',
+          options: [],
+          icon: 'api',
+          content: 'api'
+        },
+        { heading: 'Tokens', options: [], icon: 'tokens', content: 'tokens' },
+        {
+          heading: 'Markets',
+          options: [],
+          icon: 'markets',
+          content: 'markets'
+        },
+        { heading: 'Issue', options: [], icon: 'issue', content: 'issue' }
+      ]
+    },
+    { heading: 'Teams', options: [], icon: 'teams', content: 'teams' },
+    {
+      heading: 'Configure',
+      options: [],
+      icon: 'configure',
+      content: 'configure'
+    },
+    { heading: 'Health', options: [], icon: 'health', content: 'health' }
+  ]
 }

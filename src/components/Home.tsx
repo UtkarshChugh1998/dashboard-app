@@ -1,21 +1,27 @@
 import { useState } from 'react'
-import { Content } from './common/Content'
+import { Content } from './content/Content'
 import { NavBar } from './menu/NavBar'
 import { SideBar } from './navigation/SideBar'
+import { NavBarOption } from '../config/navBarOptions'
 
 export const Home = () => {
   const [sideBarItem, setSideBarItem] = useState<string>('home')
-  const [navBarItem, setNavBarItem] = useState<string>('')
+  const [currentOption, setSelectedOption] = useState<NavBarOption>()
+
   return (
     <div className="homeContainer">
       <div className="sidebar">
         <SideBar setSideBarItem={setSideBarItem} sideBarItem={sideBarItem} />
       </div>
       <div className="navbar">
-        <NavBar />
+        <NavBar
+          sideBarItem={sideBarItem}
+          setSelectedOption={setSelectedOption}
+          selectedOption={currentOption}
+        />
       </div>
       <div className="content">
-        <Content />
+        <Content currentOption={currentOption} />
       </div>
     </div>
   )
