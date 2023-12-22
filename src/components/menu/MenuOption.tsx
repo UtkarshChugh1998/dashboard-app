@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai'
 import { NavBarOption, ParentHierarchy } from '../../config/navBarOptions'
-import { Option } from './Option'
 import { getIcon } from '../../config/iconConfig'
 
 type IMenuOption = {

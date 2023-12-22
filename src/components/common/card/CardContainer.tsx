@@ -1,4 +1,4 @@
-import { CardConfig, cardConfig } from '../../../config/cardConfig'
+import { CardConfig } from '../../../config/cardConfig'
 import { Card } from './Card'
 
 type ICardContainerProps = {
