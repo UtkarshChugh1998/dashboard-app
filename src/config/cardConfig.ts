@@ -153,7 +153,7 @@ export const INITIAL_LINE_CHART_CONFIG = {
 const bitCoinChartConfig: CardConfig[] = [
   {
     headingConfig: {
-      heading: 'Bitcoin Price Chart',
+      heading: 'Crypto Price Chart',
       headingDetails: '',
       actionButtons: []
     },

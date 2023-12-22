@@ -1,10 +1,13 @@
 import './App.css'
+import { ErrorBoundary } from './components/ErrorBoundary'
 import { Home } from './components/Home'
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <ErrorBoundary>
+        <Home />
+      </ErrorBoundary>
     </div>
   )
 }
