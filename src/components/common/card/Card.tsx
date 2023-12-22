@@ -1,8 +1,8 @@
+import { getConfig } from '@testing-library/react'
 import { CardConfig } from '../../../config/cardConfig'
 import { getIcon } from '../../../config/iconConfig'
-import { ActionButtons } from '../utils/ActionButtons'
-import { CardContent } from './CardContent'
 import './card.css'
+import { getContent } from '../../../config/ContentConfig'
 
 type ICardProps = {
   heading: string
@@ -16,12 +16,14 @@ type ICardConfig = {
 export const Card = (props: ICardConfig) => {
   const { cardConfig } = props
   const { headingConfig } = cardConfig
-  const { actionButtons } = headingConfig
+  const { actionButtons, icon } = headingConfig
+  const contentConfig = cardConfig?.contentConfig
+  const content = getContent(contentConfig?.content)
   return (
     <div className="card">
       <div className="cardHeading">
         <div className="headingContent">
-          <div className="cardIcon">{getIcon('default')}</div>
+          {icon && <div className="cardIcon">{getIcon(icon)}</div>}
           <div>{headingConfig.heading}</div>
         </div>
         <div className="headingDetails">{headingConfig.headingDetails}</div>
@@ -37,6 +39,7 @@ export const Card = (props: ICardConfig) => {
           ))}
         </div>
       </div>
+      <div>{content}</div>
     </div>
   )
 }

@@ -11,9 +11,12 @@ type ISideBar = {
   setSideBarItem: (val: string) => void
 }
 const Icon = (props: any) => {
-  const handleClick = props.handleClick
+  const { handleClick, value, selected } = props
   return (
-    <div className="icon" onClick={() => handleClick(props.value)}>
+    <div
+      className={`icon ${selected ? 'iconSelected' : ''}`}
+      onClick={() => handleClick(props.value)}
+    >
       {props.children}
     </div>
   )
@@ -26,21 +29,41 @@ export const SideBar = (props: ISideBar) => {
   return (
     <div className="sidebarContainer">
       <div className="sideItemsTop">
-        <Icon value="home" handleClick={handleClick}>
+        <Icon
+          value="home"
+          handleClick={handleClick}
+          selected={sideBarItem === 'home'}
+        >
           <AiOutlineHome />
         </Icon>
-        <Icon value="global" handleClick={handleClick}>
+        <Icon
+          value="global"
+          handleClick={handleClick}
+          selected={sideBarItem === 'global'}
+        >
           <AiOutlineGlobal />
         </Icon>
-        <Icon value="currency" handleClick={handleClick}>
+        <Icon
+          value="currency"
+          handleClick={handleClick}
+          selected={sideBarItem === 'currency'}
+        >
           <AiOutlineDollarCircle />
         </Icon>
       </div>
       <div className="sideItemsBottom">
-        <Icon value="notifications" handleClick={handleClick}>
+        <Icon
+          value="notifications"
+          handleClick={handleClick}
+          selected={sideBarItem === 'notifications'}
+        >
           <AiOutlineBell />
         </Icon>
-        <Icon value="user" handleClick={handleClick}>
+        <Icon
+          value="user"
+          handleClick={handleClick}
+          selected={sideBarItem === 'user'}
+        >
           <AiOutlineUser />
         </Icon>
       </div>

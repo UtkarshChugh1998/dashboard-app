@@ -16,10 +16,17 @@
   overflow: auto;
   text-align: center;
 }
-
+.iconSelected {
+  background-color: rgb(90, 0, 0);
+}
 /* Content CSS */
 .content {
   background-color: #f3f3f3;
+  flex: 0.8;
+}
+.contentContainer {
+  overflow: auto;
+  height: calc(100% - 10px);
 }
 .icon {
   padding: 2px 0;
@@ -78,9 +85,7 @@
 .options.active {
   max-height: 200px;
 }
-.content {
-  flex: 0.7;
-}
+
 .sidebarContainer {
   display: flex;
   height: calc(100% - 20px);
@@ -116,4 +121,38 @@
   display: flex;
   justify-content: space-between;
   padding: 5px;
+}
+
+/* Chart CSS */
+.chartContent {
+  display: flex;
+  justify-content: center;
+}
+.chartContainer {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.recharts-legend-item {
+  cursor: pointer;
+  transition: transform 0.3s linear;
+  font-size: 14px;
+}
+.recharts-legend-item:hover {
+  transform: scale(1.02);
+}
+
+.issueContainer {
+  display: flex;
+  width: 100%;
+}
+
+.subContainer {
+  flex: 0.5
+}
+
+.basicContent {
+  padding: 5px;
+  font-size: 14px;
 }

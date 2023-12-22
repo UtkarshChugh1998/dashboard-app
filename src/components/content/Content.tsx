@@ -7,5 +7,5 @@ type IContent = {
 export const Content = (props: any) => {
   const { currentOption } = props
   const content = getContent(currentOption?.content)
-  return <div>{content}</div>
+  return <div className="contentContainer">{content}</div>
 }

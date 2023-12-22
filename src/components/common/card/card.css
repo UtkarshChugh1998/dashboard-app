@@ -4,17 +4,12 @@
 }
 .card {
   max-height: 600px;
-  width: 70%;
   overflow: auto;
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid #f3f3f3;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .card:hover {
@@ -28,27 +23,28 @@
   align-items: center;
   color: grey;
   padding: 5px;
+  flex-wrap: wrap;
 }
 
 .headingContent {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  width: 150px;
+  width: 100px;
 }
 
 .headingDetails {
   color: black;
   flex: 0.8;
-  min-width: 300px;
-  font-size: 14px;
+  min-width: 150px;
+  font-size: 12px;
 }
 
 
 .actionContent {
-  flex: 0.3;
+  flex: 0.2;
   justify-content: center;
 }
 .actionButton {

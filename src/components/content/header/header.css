@@ -1,0 +1,20 @@
+.headerContainer {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 2px solid #d3d3d3;
+}
+
+.userLabel {
+  padding: 10px;
+  height: 20px;
+  width: 90px;
+  margin-right: 20px;
+  border: 1px solid #d3d3d3;
+  border-radius: 2px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}

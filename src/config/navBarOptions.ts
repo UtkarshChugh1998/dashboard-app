@@ -1,5 +1,3 @@
-import { ReactElement } from 'react'
-
 export const navBarOptions = (sideBarValue: string): NavBarOption[] => {
   return navList[sideBarValue] || navList.home
 }
@@ -61,8 +59,6 @@ const navList: NavBarList = {
   currency: [
     { heading: 'Chain', options: getOptions('chain') },
     { heading: 'Environment', options: getOptions('Environment') },
-    { heading: 'Environment 2', options: getOptions('Environment') },
-    { heading: 'Environment 3', options: getOptions('Environment') },
     {
       heading: 'Production',
       options: [
@@ -76,31 +72,31 @@ const navList: NavBarList = {
           heading: 'Settings',
           options: [],
           icon: 'settings',
-          content: 'settings'
+          content: 'basic'
         },
         {
           heading: 'API Integration',
           options: [],
           icon: 'api',
-          content: 'api'
+          content: 'basic'
         },
         { heading: 'Tokens', options: [], icon: 'tokens', content: 'tokens' },
         {
           heading: 'Markets',
           options: [],
           icon: 'markets',
-          content: 'markets'
+          content: 'basic'
         },
         { heading: 'Issue', options: [], icon: 'issue', content: 'issue' }
       ]
     },
-    { heading: 'Teams', options: [], icon: 'teams', content: 'teams' },
+    { heading: 'Teams', options: [], icon: 'teams', content: 'basic' },
     {
       heading: 'Configure',
       options: [],
       icon: 'configure',
-      content: 'configure'
+      content: 'basic'
     },
-    { heading: 'Health', options: [], icon: 'health', content: 'health' }
+    { heading: 'Health', options: [], icon: 'health', content: 'basic' }
   ]
 }
