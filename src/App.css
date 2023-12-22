@@ -11,7 +11,7 @@
 .sidebar {
   width: 30px;
   height: 100%;
-  background-color: rgb(96, 92, 87);
+  background-color: rgb(128, 20, 40);
   padding: 5px;
   overflow: auto;
   text-align: center;
@@ -29,7 +29,7 @@
   height: calc(100% - 10px);
 }
 .icon {
-  padding: 2px 0;
+  padding: 5px 0;
   
 }
 
@@ -57,17 +57,18 @@
   color: gray;
   font-size: 14px;
   font-weight: 600;
-  padding: 2px;
+  padding: 10px;
   border-radius: 2px;
 }
 .heading:hover {
   background-color: #f3f3f3;
 }
 .heading.selected {
+  color: rgb(128, 20, 40);
   background-color: #d3d3d3;
 }
 .navContent {
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 .iconItem {
@@ -83,7 +84,7 @@
   transition: max-height 0.4s ease-out;
 }
 .options.active {
-  max-height: 200px;
+  max-height: 260px;
 }
 
 .sidebarContainer {
@@ -155,4 +156,13 @@
 .basicContent {
   padding: 5px;
   font-size: 14px;
+}
+
+/* Notification CSS */
+.notif {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+.notif.open {
+  opacity: 1;
 }

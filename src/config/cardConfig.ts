@@ -34,8 +34,32 @@ const instrumentDetailsConfig = [
       headingDetails: 'Supply Details',
       actionButtons: [
         {
+          name: 'Transfer',
+          onClick: () => alert('Transfer')
+        }
+      ]
+    }
+  },
+  {
+    headingConfig: {
+      heading: 'Mint',
+      headingDetails: 'Mint Details',
+      actionButtons: [
+        {
           name: 'Mint',
           onClick: () => alert('Mint')
+        }
+      ]
+    }
+  },
+  {
+    headingConfig: {
+      heading: 'Burn',
+      headingDetails: 'Burn Details',
+      actionButtons: [
+        {
+          name: 'Burn',
+          onClick: () => alert('Burn')
         }
       ]
     }
@@ -92,6 +116,28 @@ const offChainConfig: CardConfig[] = [
       headingDetails: '',
       actionButtons: [],
       icon: 'docs'
+    },
+    contentConfig: {
+      content: 'basic'
+    }
+  },
+  {
+    headingConfig: {
+      heading: 'Prospectus',
+      headingDetails: '',
+      actionButtons: [],
+      icon: 'prospectus'
+    },
+    contentConfig: {
+      content: 'basic'
+    }
+  },
+  {
+    headingConfig: {
+      heading: 'Custodian',
+      headingDetails: '',
+      actionButtons: [],
+      icon: 'custodian'
     },
     contentConfig: {
       content: 'basic'

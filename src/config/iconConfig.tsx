@@ -1,12 +1,15 @@
 import {
   AiFillStar,
   AiOutlineAppstore,
+  AiOutlineAudit,
   AiOutlineBank,
   AiOutlineChrome,
   AiOutlineCode,
   AiOutlineFileDone,
+  AiOutlineFileText,
   AiOutlineInfoCircle,
   AiOutlineInsurance,
+  AiOutlineProfile,
   AiOutlineSafetyCertificate,
   AiOutlineSetting,
   AiOutlineStock,
@@ -54,6 +57,15 @@ export const getIcon = (iconName: string) => {
     }
     case 'health': {
       return <AiOutlineSafetyCertificate />
+    }
+    case 'prospectus': {
+      return <AiOutlineFileText />
+    }
+    case 'custodian': {
+      return <AiOutlineAudit />
+    }
+    case 'default': {
+      return <AiOutlineProfile />
     }
     default: {
       return null

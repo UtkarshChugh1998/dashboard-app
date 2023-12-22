@@ -21,7 +21,7 @@ export const UILineChart = (props: any) => {
   const isLoading = useRef<boolean>(true)
   const [coinError, setError] = useState<any>()
   const [currentCoin, setCoin] = useState<any>({ label: '', value: '' })
-
+  const [isNotifOpen, setOpen] = useState<boolean>(false)
   useCoinData(currentCoin.value || '', setCoinData, setError, isLoading)
 
   const storedConfig = JSON.parse(
@@ -40,6 +40,8 @@ export const UILineChart = (props: any) => {
       `${currentCoin.value}Config`,
       JSON.stringify(chartConfig)
     )
+    setOpen(true)
+    setTimeout(() => setOpen(false), 500)
   }
 
   const handleVisible = (props: any) => {
@@ -52,7 +54,8 @@ export const UILineChart = (props: any) => {
     <div className="chartContent">
       <DropDown
         options={coinOptions}
-        setValue={(coinId: string) => setCoin(coinId)}
+        setSelectedOption={(coinId: string) => setCoin(coinId)}
+        selectedOption={currentCoin}
       />
       <div className="chartContainer">
         {!currentCoin.label ? (
@@ -102,6 +105,9 @@ export const UILineChart = (props: any) => {
                 </LineChart>
                 <div>
                   <ActionButtons name="Save" onClick={handleSave} />
+                  <div className={`notif ${isNotifOpen ? 'open' : ''}`}>
+                    Saved !!
+                  </div>
                 </div>
               </>
             )}

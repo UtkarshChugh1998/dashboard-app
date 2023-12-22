@@ -1,5 +1,5 @@
 .cardContainer {
-  width: 80%;
+  width: 90%;
   margin: 20px auto;
 }
 .card {
@@ -22,7 +22,7 @@
   justify-content: flex-start;
   align-items: center;
   color: grey;
-  padding: 5px;
+  padding: 15px;
   flex-wrap: wrap;
 }
 
@@ -32,7 +32,7 @@
   align-items: center;
   font-size: 13px;
   font-weight: 600;
-  width: 100px;
+  width: 200px;
 }
 
 .headingDetails {

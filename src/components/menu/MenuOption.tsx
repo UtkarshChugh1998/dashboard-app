@@ -23,16 +23,9 @@ export const MenuOption = (props: IMenuOption) => {
       setSelectedOption(navContent)
     }
   }
-  console.log(
-    'Selection',
-    navContent === selectedOption,
-    navContent,
-    selectedOption
-  )
   const classNames = `heading ${
     selectedOption === navContent ? 'selected' : ''
   }`
-  console.log('classnames', classNames)
   return (
     <div className="navContent">
       <div className={classNames} onClick={handleClick}>

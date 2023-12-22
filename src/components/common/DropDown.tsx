@@ -1,19 +1,17 @@
 import { SetStateAction, useState } from 'react'
 
 export const DropDown = (props: any) => {
-  const { options, setValue } = props
-  const [selectedOption, setSelectedOption] = useState('')
+  const { options, setSelectedOption, selectedOption } = props
 
   const handleOptionChange = (e: any) => {
-    setSelectedOption(e.target.value)
     const index = e.target.selectedIndex - 1
-    setValue(options[index])
+    setSelectedOption(options[index])
   }
 
   return (
     <div style={{ width: '300px', marginLeft: '10px' }}>
       <div>Coin</div>
-      <select value={selectedOption} onChange={handleOptionChange}>
+      <select value={selectedOption.value} onChange={handleOptionChange}>
         <option value="" disabled>
           Select an option...
         </option>
@@ -23,7 +21,7 @@ export const DropDown = (props: any) => {
           </option>
         ))}
       </select>
-      {selectedOption && <p>Selected option: {selectedOption}</p>}
+      {selectedOption && <p>Selected option: {selectedOption.label}</p>}
     </div>
   )
 }
