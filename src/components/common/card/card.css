@@ -37,28 +37,28 @@
 
 .headingDetails {
   color: black;
-  flex: 0.8;
+  flex: 0.7;
   min-width: 150px;
   font-size: 12px;
 }
 
 
 .actionContent {
-  flex: 0.2;
+  flex: 0.3;
   justify-content: center;
 }
 .actionButton {
-  padding: 8px 16px;
-  border: none;
+  padding: 8px 8px;
+  border: 1px solid rgb(185, 178, 178);
   border-radius: 4px;
-  background-color: #3f51b5;
-  color: white;
+  background-color: white;
+  color: gray;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .actionButton:hover {
-  background-color: #303f9f;
+  background-color: #f3f3f3;
 }
 
 
