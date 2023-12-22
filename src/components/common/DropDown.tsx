@@ -6,7 +6,8 @@ export const DropDown = (props: any) => {
 
   const handleOptionChange = (e: any) => {
     setSelectedOption(e.target.value)
-    setValue(e.target.value)
+    const index = e.target.selectedIndex - 1
+    setValue(options[index])
   }
 
   return (

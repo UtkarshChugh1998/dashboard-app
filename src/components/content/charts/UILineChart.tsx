@@ -20,12 +20,12 @@ export const UILineChart = (props: any) => {
   const [coinData, setCoinData] = useState<any>()
   const isLoading = useRef<boolean>(true)
   const [coinError, setError] = useState<any>()
-  const [currentCoin, setCoin] = useState<string>()
+  const [currentCoin, setCoin] = useState<any>({ label: '', value: '' })
 
-  useCoinData(currentCoin || '', setCoinData, setError, isLoading)
+  useCoinData(currentCoin.value || '', setCoinData, setError, isLoading)
 
   const storedConfig = JSON.parse(
-    localStorage.getItem(`${currentCoin}Config`) || 'null'
+    localStorage.getItem(`${currentCoin.value}Config`) || 'null'
   )
   const [chartConfig, setChartConfig] = useState<any>(
     storedConfig || INITIAL_LINE_CHART_CONFIG
@@ -36,7 +36,10 @@ export const UILineChart = (props: any) => {
   }, [currentCoin])
 
   const handleSave = () => {
-    localStorage.setItem(`${currentCoin}Config`, JSON.stringify(chartConfig))
+    localStorage.setItem(
+      `${currentCoin.value}Config`,
+      JSON.stringify(chartConfig)
+    )
   }
 
   const handleVisible = (props: any) => {
@@ -52,7 +55,7 @@ export const UILineChart = (props: any) => {
         setValue={(coinId: string) => setCoin(coinId)}
       />
       <div className="chartContainer">
-        {!currentCoin ? (
+        {!currentCoin.label ? (
           <h3>Select a Coin to view Data</h3>
         ) : (
           <>
@@ -79,21 +82,21 @@ export const UILineChart = (props: any) => {
                     type="monotone"
                     dataKey="price"
                     stroke="#000"
-                    name="Bitcoin Price"
+                    name={`${currentCoin.label} Price`}
                     hide={chartConfig.price}
                   />
                   <Line
                     type="monotone"
                     dataKey="market_cap"
                     stroke="#000"
-                    name="Bitcoin Market Cap"
+                    name={`${currentCoin.label} Market Cap`}
                     hide={chartConfig.market_cap}
                   />
                   <Line
                     type="monotone"
                     dataKey="total_volume"
                     stroke="#000"
-                    name="Bitcoin Total Volume"
+                    name={`${currentCoin.label} Total Volume`}
                     hide={chartConfig.total_volume}
                   />
                 </LineChart>

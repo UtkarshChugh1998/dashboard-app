@@ -10,6 +10,12 @@ export const useCoinData = (
     if (!coinId) {
       return
     }
+    const data = JSON.parse(localStorage.getItem(`${coinId}Data`) || 'null')
+    if (data) {
+      isLoading.current = false
+      setCoinData(data)
+      return
+    }
     fetch(urlsConfig.getCoinDataUrl(coinId, 'usd', 30, 'daily', 0), {
       method: 'GET',
       headers: {
@@ -21,6 +27,7 @@ export const useCoinData = (
       })
       .then((res) => {
         isLoading.current = false
+        localStorage.setItem(`${coinId}Data`, JSON.stringify(res))
         setCoinData(res)
       })
       .catch((error) => {
